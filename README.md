@@ -27,3 +27,5 @@ We believe in the power of community, and your voice matters here. If you stumbl
 So, welcome, friends, to a world where knowledge knows no bounds. Together, let's embark on a journey of tech exploration and homelab mastery. Happy browsing! 🌟
 
 > _ChatGPT makes me sound a loooot better than I am_
+
+test edit
