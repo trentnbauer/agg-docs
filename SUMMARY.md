@@ -5,6 +5,7 @@
 * [👋 Welcome, friends](README.md)
 * [⚔ Discord](https://discord.xfgn.dev)
 * [📋 GitHub](https://github.com/trentnbauer/agg)
+* [🎯 Submit change](public-files/submit-change.md)
 
 ## 📚 Guides
 
