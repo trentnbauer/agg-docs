@@ -6,6 +6,8 @@ AGG's Private Valheim server is a community orientated, no griefing server. We'v
 
 The application needs to be filled correctly but it is relatively straight forward.
 
+### Server Rules
+
 ## Submitting an Application
 
 To submit an application you will need to
@@ -69,8 +71,11 @@ Unfortunately getting the SteamID64 for Game Pass players is a bit more difficul
 2. Select Valheim
 3. Select the Modpack, "A Gamers Grind...."
 4. Click on the "▶️ Modded" button
+5. Click on 'AGamersGrind' in the Quick Connect menu in the top left\
+   ![](<../.gitbook/assets/image (41).png>)
+6. Select your Character and hit Start
 
-_Please note: Joining a non-modded server with your modded character may break your character, delete your items etc. AGG are unable to retrieve this._
+_Please note: Joining a non-modded server with your modded character may break your character and/or delete your items. This is all stored client side - AGG cannot restore this data_
 
 #### You will not be able to join the server until you have
 
