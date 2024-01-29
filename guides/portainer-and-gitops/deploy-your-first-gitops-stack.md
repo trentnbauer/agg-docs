@@ -4,7 +4,7 @@
 
 ## What is a Stack?
 
-Stacks is how Portainer handles Docker Compose files, which are infrastructure as code documents for spinning up multiple containers, volumes and networks in 1 go.&#x20;
+Stacks is how Portainer handles Docker Compose files, which are infrastructure as code documents for spinning up multiple containers, volumes and networks in 1 go.
 
 Most docker container developers now provide example compose files with their projects. Its also possible to Google and find examples online
 
@@ -39,11 +39,10 @@ In this practice, we're going to deploy the Ombi compose file we created in [cre
    3. Tick 'Authentication'
       * Username = Github Email
       * [Personal Access Token](set-up-github.md#create-a-private-access-token-for-portainer)
-   4. Repository URL = the URL of your repo + .git (eg "https://github.com/trentnbauer/agg.local.git_"_)
+   4. Repository URL = the URL of your repo + .git (eg "https://github.com/trentnbauer/agg.local.git\_"\_)
    5. Compose path = docker-compose/ombi.yml
    6.  Tick 'Automatic updates'\
-       You should see a page similar to this,\
-
+       You should see a page similar to this,\\
 
        <figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption><p>Pro tip - you can use the Fetch interval to delay updates on some services. An example I have of this is my redundant Cloudflare Tunnel containers. One server updates every 15 minutes, the other updates every 24hours. They both use the same compose file. This means if an update breaks the 15m instance, then 24h is still live for me to roll back</p></figcaption></figure>
    7.  Scroll down to the 'environment variables' section and add the following variables
@@ -52,7 +51,7 @@ In this practice, we're going to deploy the Ombi compose file we created in [cre
        * BASE\_URL
        * PORT\_HTTP
 
-       <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
    8. Provide your TZ per the ['tz identifier' here](https://en.wikipedia.org/wiki/List\_of\_tz\_database\_time\_zones)
    9. Provide a base url, if you are using one (not required)
    10. Provide the port that Ombi will use
@@ -62,4 +61,4 @@ If you have any issues, refer to the Notifications tab at the top of the page;
 
 <figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
-Most Portainer errors can be resolved with a simple Google search but I also have my own [troubleshooting list here](broken-reference)
+Most Portainer errors can be resolved with a simple Google search but I also have my own [troubleshooting list here](broken-reference/)

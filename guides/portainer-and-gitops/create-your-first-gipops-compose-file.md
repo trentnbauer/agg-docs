@@ -96,14 +96,12 @@ As Docker has now started rate limiting non-paying users, a lot of container cre
 
 Its quite easy to figure out if a container exists on GitHub;
 
-1.  If the 'Packages' option exists, the container is on GitHub\
-
+1.  If the 'Packages' option exists, the container is on GitHub\\
 
     <figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
-2.  The container URL is underlined\
+2.  The container URL is underlined\\
 
-
-    <figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 [^1]: Using the Latest tag
 

@@ -8,7 +8,7 @@ _I am installing Wings on my test VM, 'Basil', for writing this documentation. A
 
 ### Configure the 'Pterodactyl Wings' Portainer stack
 
-Refer to the [Portainer](broken-reference) and [GitOps](broken-reference) documentation for configuring a new Portainer stack using the AGG Pterodactyl Wings Docker Compose file
+Refer to the [Portainer](broken-reference/) and [GitOps](broken-reference/) documentation for configuring a new Portainer stack using the AGG Pterodactyl Wings Docker Compose file
 
 * Name the stack something simple, like 'wings'
 * Ensure you fill all the variables from the ENV file
@@ -56,12 +56,12 @@ PORT=             #This is the port Cloudflare will talk too, do not use 443
 
 ### Configure the Reverse Proxy
 
-Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostname.md) and [Authentication ](broken-reference)guides
+Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostname.md) and [Authentication ](broken-reference/)guides
 
 * Your subdomain and domain needs to match the PTERO\_PANEL\_URL variable set above
 * Type is HTTP, pointing at yourserver:port
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 ## Configure Panel & Wings
 
@@ -80,17 +80,15 @@ Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostn
    * Set your Daemon port to 443 (As Cloudflare uses 443 for its proxy)
    *   Click on 'Create Node'
 
-       <figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Upload Configuration file to Wings
 
 1. In Pterodactyl, click on 'Nodes' on the left
-2.  You should see your new Node, with a red heart\
-
+2.  You should see your new Node, with a red heart\\
 
     <figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
-3.  Click on your new node, then the Configuration tab and confirm that the highlighted lines are the same as mine\
-
+3.  Click on your new node, then the Configuration tab and confirm that the highlighted lines are the same as mine\\
 
     <figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption><p><em>I would also recommend changing the upload limit to 1024</em></p></figcaption></figure>
 4. Copy the contents of the file and save it as 'config.yml'
@@ -102,8 +100,7 @@ Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostn
 10. Click on the Upload button, then select your config.yml file
 11. Click on Stacks and open your Wings stack
 12. Restart the stack and wait 30 seconds
-13. Refresh the Pterodactyl Nodes page and it should now be connected\
-
+13. Refresh the Pterodactyl Nodes page and it should now be connected\\
 
     <figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
@@ -113,8 +110,7 @@ Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostn
 2. On the right hand panel, input
    1. IP address: 0.0.0.0
    2. IP Alias: Your domain or subdomain that points to your servers public IP
-   3.  Ports: The port range you will forward to this VM (I've chosen ports 500-600)\
-
+   3.  Ports: The port range you will forward to this VM (I've chosen ports 500-600)\\
 
        <figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
    4. Run the `ufw allow` command to allow these ports through the firewall. You can use a : to allow a range, such as 500:600
@@ -132,8 +128,6 @@ Port forwarding is particularly tricky for beginners, mostly because every devic
 
 You'll need to do some Googling and / or Youtube'ing on how to port forward with your model router / modem.
 
-
-
 ## Why do I do it this way?
 
 My assumption here is that the Pterodactyl dev's want us to set up and use SSL certs on the Wings host and make it publicly available without a proxy. I can't be bothered generating certs and managing their expirations in my Homelab. My configuration offloads the certificate management to Cloudflare (or any other reverse proxy - I used to use NGINX Proxy Manager for this) which means that I don't need to worry about cycling certificates.
@@ -141,7 +135,7 @@ My assumption here is that the Pterodactyl dev's want us to set up and use SSL c
 Offloading this task to the Cloudflare tunnel does create a couple of potential issues,
 
 * If the tunnel is down / crashes, the Panel can't talk Wings
-* If your hosting the Panel and Wings in your _home_lab, the connection is reliant on the internet being up
+* If your hosting the Panel and Wings in your \_home\_lab, the connection is reliant on the internet being up
 * Cloudflare outages may break the Panel / Wings communication
 * Pterodactyl Discord does not provide support for proxied panel/wings connections
 

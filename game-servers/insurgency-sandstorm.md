@@ -1,2 +1,2 @@
-# ❔ Insurgency Sandstorm
+# Insurgency Sandstorm
 

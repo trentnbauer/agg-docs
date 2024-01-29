@@ -38,8 +38,15 @@
 
 ## 🎮 Game Servers
 
-* [❔ Insurgency Sandstorm](game-servers/insurgency-sandstorm.md)
-* [❔ Minecraft](game-servers/minecraft.md)
+* [Valheim Public](game-servers/valheim-public.md)
+* [Valheim Private](game-servers/valheim-private.md)
+* [MultiMC (Minecraft)](game-servers/multimc-minecraft.md)
+* [CreateCraft (Minecraft)](game-servers/createcraft-minecraft.md)
+* [Insurgency Sandstorm](game-servers/insurgency-sandstorm.md)
+
+## ⚔ AGG Moderation
+
+* [Approving Valheim Application](agg-moderation/approving-valheim-application.md)
 
 ***
 
