@@ -8,6 +8,8 @@ The application needs to be filled correctly but it is relatively straight forwa
 
 ### Server Rules
 
+The server rules are listed in the Discord Application thread
+
 ## Submitting an Application
 
 To submit an application you will need to
