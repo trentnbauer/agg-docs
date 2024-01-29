@@ -8,7 +8,10 @@ The application needs to be filled correctly but it is relatively straight forwa
 
 ### Server Rules
 
-The server rules are listed in the Discord Application thread
+1. Do not grief, troll or ruin other players experience on the Server
+2. Do not purposely crash or reduce the servers performance
+3. Do not abuse other player
+4. Follow the rules outlined in the AGG Discord
 
 ## Submitting an Application
 
