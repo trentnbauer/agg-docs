@@ -7,10 +7,12 @@ This page outlines the process followed to approve and whitelist a new player fo
 When an application is submitted the mod chat will be ping'd. You will need to join the application thread to view the application. Review the form submitted by the user and ensure you are happy with the responses.&#x20;
 
 * Feel free to request more information from the player
-* If the player has provided an existing player, message them as a reference
+* If the player has provided the name of an existing server member, message them as a reference
 * Request their SteamID64 string if not provided, [#getting-your-steamid-string](../game-servers/valheim-private.md#getting-your-steamid-string "mention")&#x20;
 
-## Whitelist the Player
+## Player is Approved
+
+### Whitelist the Player
 
 Once you are happy with the application and are ready to whitelist the player,
 
@@ -30,10 +32,15 @@ Once you are happy with the application and are ready to whitelist the player,
 4. Save the file
 5. Post in the Discord Thread and advise the player that they have been approved
 
-## Installing the Modpack
+### Installing the Modpack
 
 Provide the user with a link to [#install-the-modpack](../game-servers/valheim-private.md#install-the-modpack "mention") if they have not already
 
-## Close the Application
+### Close the Application
 
-Click 'close with reason', advising if approved or denied
+1. Add the user to the 'Valheim Private' discord role
+2. Click 'close with reason', advising the application has been approved
+
+## Player is Denied
+
+Process not outlined yet
