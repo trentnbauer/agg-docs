@@ -46,6 +46,7 @@
 
 ## ⚔ AGG Moderation
 
+* [❔ Creating a new Server](agg-moderation/creating-a-new-server.md)
 * [Approving Valheim Application](agg-moderation/approving-valheim-application.md)
 
 ***
