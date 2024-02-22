@@ -44,7 +44,7 @@ C:\Users\x>ping play.reallycoolservers.com
 Ping request could not find host play.reallycoolservers.com. Please check the name and try again.
 ```
 
-Your DDNS config is incorrect OR you've made a typo in your ping command.&#x20;
+Your DDNS config is incorrect OR you've made a typo in your ping command.
 
 1. Firstly, review your ping command and ensure the address is correct
    * If it is correct, there is an issue with your DDNS container. Review the logs for that container
@@ -116,9 +116,24 @@ To do this, we'll follow the green line.
 
 3. Attempt to connect to the server via the internal IP:port
 
-#### Connects successfully&#x20;
+#### Connects successfully
 
 
+
+## FATAL: failed to configure docker environment error=Error response from daemon: Pool overlaps with other one on this address space
+
+Wings has defaulted to a docker network range that is in-use. The easiest way to resolve this is to edit your config.yml file, per step [#upload-configuration-file-to-wings](creating-a-new-wings-node.md#upload-configuration-file-to-wings "mention")to include the below lines
+
+```yaml
+docker:
+  network:
+    interfaces:
+      v4:
+        subnet: 172.31.0.0/16
+        gateway: 172.31.0.1
+```
+
+Please note: The IP range for 172 is quite small - 172.16 to 172.31. You may be able to get away with using a /24 subnet or something outside of the range. If you use something outside of the range you may run into issues accessing the internet on your wings host doing this. You could also use a different range, like 192.168 or 10.x
 
 
 
