@@ -8,25 +8,21 @@
 2. On the left, click on 'Zero Trust'
 3. On the left, click on Access > Tunnels
 4. Click on 'Create a tunnel'
-5. Name the tunnel and click on 'save tunnel'
+5. Name the tunnel (eg "Home Network") and click on 'save tunnel'
 6. Scroll down on the next page and locate the connector command,\
-   `cloudflared.exe service install`` `**`R4nd0mStr1ng0fCh4ract3rs`**
+   ` cloudflared.exe service install`` `` `**`R4nd0mStr1ng0fCh4ract3rs`**
 7. Take note of the unique key after 'install' (bolded above); save this in your password vault
 8. Click on Next
-9.  We're now forced to create a public hostname (reverse proxy), as we already have Portainer set up, we will create a public host for this\
+9.  We're now forced to create a public hostname (reverse proxy). Per the scenario we will create a tunnel for Overseer;
 
-
-    | Field     | Data              |
-    | --------- | ----------------- |
-    | subdomain | portainer         |
-    | domain    | yourdomain.com    |
-    | path      |                   |
-    | type      | HTTPS             |
-    | url       | yourserverip:9443 |
+    | Field     | Data               |
+    | --------- | ------------------ |
+    | subdomain | overseerr          |
+    | domain    | yourdomain.com     |
+    | path      |                    |
+    | type      | HTTP               |
+    | url       | ServerHostame:Port |
 10. click on 'Additional application settings'
-    1. Click on TLS
-    2. Tick 'No TLS Verify'\
-       _This is require as Portainer uses a Self Signed certificate, which does not meet verification requirements_
 11. Click on 'Save tunnel'
 12. You will be brought back to the Tunnels homepage, your tunnel will show as 'inactive'
 
@@ -46,4 +42,4 @@ Repeat steps 2-4 for each additional tunnel you wish to create (for load balanci
 
 ## Test the Tunnel
 
-Browse to the public hostname we created earlier and confirm that Portainer logon screen loads
+Browse to the public hostname we created earlier (step 9; subdomain + domain) and confirm that the Overseerr screen loads

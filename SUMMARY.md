@@ -1,11 +1,11 @@
 # Table of contents
 
-* [🖥 www.agamersgrind.com](https://agamersgrind.com)
+* [🖥️ www.agamersgrind.com](https://agamersgrind.com)
 
-## 🏙 --- Public Files ---
+## 🏙️ --- Public Files ---
 
 * [👋 Welcome, friends](README.md)
-* [⚔ Discord](https://discord.xfgn.dev)
+* [⚔️ Discord](https://discord.xfgn.dev)
 * [📋 GitHub](https://github.com/trentnbauer/agg)
 * [☕ Buy me a Coffee](https://www.paypal.com/paypalme/x4rdoniak)
 
@@ -44,11 +44,11 @@
 * [CreateCraft (Minecraft)](game-servers/createcraft-minecraft.md)
 * [Insurgency Sandstorm](game-servers/insurgency-sandstorm.md)
 
-## ⚔ AGG Moderation
+## ⚔️ AGG Moderation
 
 * [❔ Creating a new Server](agg-moderation/creating-a-new-server.md)
 * [Approving Valheim Application](agg-moderation/approving-valheim-application.md)
 
 ***
 
-* [🗄 Internal Documentation](https://docs.xfgn.dev)
+* [🗄️ Internal Documentation](https://docs.xfgn.dev)

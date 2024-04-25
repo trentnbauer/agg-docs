@@ -6,7 +6,7 @@ I personally find the Cloudflare documentation to be written very generically, w
 
 ## The Scenario
 
-Our goal here is to make our instance of [Overseerr](https://github.com/sct/overseerr) publicly available, so our friends and family with access to our Plex media can request content without bothering us to do it for them.
+Our goal here is to make our instance of [Overseerr](https://github.com/sct/overseerr) publicly available, so our friends and family with pre-existing access to our Plex server can request content without bothering us to do it for them.
 
 In addition to that, we also want to make [Sonarr](https://github.com/Sonarr/Sonarr) and [Radarr](https://github.com/Radarr/Radarr) instances accessible externally but behind Cloudflares authentication. This means that only authorized users can access these services.
 
@@ -23,8 +23,12 @@ Some apps, such as game servers, require a direct connection to your server. Ple
   * [Portainer](https://github.com/portainer/portainer) (or Portainer Edge Agent) installed
 * A private GitHub repo to store Docker Compose files ('[GitOps](../../portainer-and-gitops/)')
 * A Domain that's managed by Cloudflare
-* An internal service you want to be publicly exposed
-* An internal service you want to be publicly exposed but with Authentication
+* An internal service you want to be publicly accessible by anyone (Overseer per above)
+  * Knowledge of the server hostname or IP
+  * Knowledge of the port the service runs on
+* An internal service you want to be publicly exposed but with Authentication (Sonarr / Radarr per above)
+  * Knowledge of the server hostname or IP
+  * Knowledge of the port the service runs on
 
 ### Recommended
 
