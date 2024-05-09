@@ -140,3 +140,20 @@ Please note: The IP range for 172 is quite small - 172.16 to 172.31. You may be 
 EDIT:
 
 I'm trying to find a way to make a 'chose your own adventure' style book for this, where you click on your options and it goes through the relevant troubleshooting steps with you.
+
+
+
+## Panel is unable to see Node
+
+### Confirm the Container is working
+
+1. Start the Wings container if it not running
+2.  Check your docker logs, you should see something similar to below
+
+    <figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+3.  Open your internet browser and navigate to hostname:port, you should see the below error;
+
+    <pre><code><strong>{"error":"The required authorization heads were not present in the request."}
+    </strong></code></pre>
+
+If you get different messages, you may not have applied the config file correctly

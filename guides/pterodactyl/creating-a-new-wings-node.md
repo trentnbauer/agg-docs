@@ -43,17 +43,6 @@ PORT=             #This is the port Cloudflare will talk too, do not use 443
     <pre class="language-sh"><code class="lang-sh"><strong>ufw allow 2022
     </strong></code></pre>
 
-### Confirm the Container is working
-
-1. Start the Wings container if it not running
-2.  Check your docker logs, you should see something similar to below
-
-    <figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
-3.  Open your internet browser and navigate to hostname:port, you should see the below error;
-
-    <pre><code><strong>{"error":"The required authorization heads were not present in the request."}
-    </strong></code></pre>
-
 ### Configure the Reverse Proxy
 
 Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostname.md) and [Authentication ](broken-reference/)guides
@@ -88,7 +77,7 @@ Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostn
 2.  You should see your new Node, with a red heart\\
 
     <figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
-3.  Click on your new node, then the Configuration tab and confirm that the highlighted lines are the same as mine\\
+3.  Click on your new node, then the Configuration tab and confirm that the highlighted lines are the same as mine
 
     <figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption><p><em>I would also recommend changing the upload limit to 1024</em></p></figcaption></figure>
 4. Copy the contents of the file and save it as 'config.yml'
@@ -100,7 +89,7 @@ Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostn
 10. Click on the Upload button, then select your config.yml file
 11. Click on Stacks and open your Wings stack
 12. Restart the stack and wait 30 seconds
-13. Refresh the Pterodactyl Nodes page and it should now be connected\\
+13. Refresh the Pterodactyl Nodes page and it should now be connected
 
     <figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
