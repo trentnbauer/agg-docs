@@ -8,7 +8,7 @@
 
 Create your Portainer stack using the below compose and env file
 
-_I would recommend deploying GitOps (have a look at the_ [Broken link](broken-reference "mention") _guide) as this will shift your compose file off of your server and into GitOps and manage container updates for you_
+_I would recommend deploying GitOps (have a look at the_ [broken-reference](broken-reference/ "mention") _guide) as this will shift your compose file off of your server and into GitOps and manage container updates for you_
 
 {% @github-files/github-code-block url="https://github.com/trentnbauer/agg/blob/main/docker-compose/pterodactyl-panel.yml" %}
 
@@ -23,6 +23,7 @@ MAIL_USERNAME=youremail@gmail.com
 MAIL_PASS=
 PTERO_PANEL_URL=https://panel.example.com #your cloudflare subdomain
 TZ=
+HASHIDS_SALT=   #This MUST be a 20 character string, per https://github.com/pterodactyl/panel/issues/5012#issuecomment-1960789655
 <strong>HEALTHCHECK= #this will be your hostname+PORT_HTTP, eg http://myserver:80
 </strong></code></pre>
 
@@ -115,7 +116,7 @@ php artisan p:user:make
 
 ## Set up your Proxy
 
-1. Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostname.md) and [Authentication ](broken-reference)guides
+1. Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostname.md) and [Authentication ](broken-reference/)guides
    * Your subdomain and domain needs to match the PTERO\_PANEL\_URL variable set above
    * Type is HTTP, pointing at yourserver:port
 
