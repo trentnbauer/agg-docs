@@ -12,7 +12,7 @@ _Come across an issue with this documentation? You can make an edit request your
 
 Our goal is to create a new Pterodactyl Panel and Wings node for hosting game servers.
 
-This documentation is NOT intended for a professional / reseller environment. Please do not follow this guide if you intend on selling or publicizing your server resources, as
+**This documentation is NOT intended for a professional / reseller environment.** Please do not follow this guide if you intend on selling or publicizing your server resources, as
 
 * Proxy / Tunnelling wings and panel is NOT supported by Pterodactyl developers
 * This guide is provided with best effort support
@@ -27,7 +27,7 @@ Wings hosts the game server compute (CPU) and storage. As this machines job is t
 
 ### Flowchart
 
-<figure><img src="https://4115153834-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F6s9LbmHPE41U6jxE7Mp6%2Fuploads%2FLIrMkgJVCxZY3X6E6Z20%2Ffile.excalidraw.svg?alt=media&#x26;token=492c8a46-ed18-4945-a4b2-b34ff40cbdf4" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://4115153834-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F6s9LbmHPE41U6jxE7Mp6%2Fuploads%2FLIrMkgJVCxZY3X6E6Z20%2Ffile.excalidraw.svg?alt=media&#x26;token=492c8a46-ed18-4945-a4b2-b34ff40cbdf4" alt=""><figcaption><p>As you can see, Wings and Panel communicate via Cloudflare, over the internet. This is not great but OK for a homelab</p></figcaption></figure>
 
 ## Prerequisites
 
