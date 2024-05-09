@@ -4,7 +4,7 @@ coverY: 0
 
 # Pterodactyl
 
-<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Time Required</td><td>1 Hour</td></tr><tr><td>Difficulty</td><td>Easy</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Time Required</td><td>1 Hour</td></tr><tr><td>Difficulty</td><td>Easy</td></tr><tr><td>Required Knowledge</td><td>Docker, Reverse Proxies</td></tr></tbody></table>
 
 _Come across an issue with this documentation? You can make an edit request yourself, using the 'Submit Change' button on the left, or report it on our_ [_Discord_](https://discord.agamersgrind.com)
 
@@ -33,7 +33,9 @@ Wings hosts the game server compute (CPU) and storage. As this machines job is t
 
 * Panel machine
   * [Docker and compose installed](https://docs.docker.com/engine/install/ubuntu/)
-* 1 machine to install the Wings node on (can be the same as the panel machine)\
+  * Port 3306 to be available\
+    _Further testing has confirmed the panel will ONLY talk to DB's on 3306_
+* 1 machine to install the Wings node on (can be the same as the panel machine but not recommended)\
   _You can create multiple node machines_
   * [Docker and Compose installed](https://docs.docker.com/engine/install/ubuntu/)
   * A high performance, well spec'd machine;
@@ -41,10 +43,10 @@ Wings hosts the game server compute (CPU) and storage. As this machines job is t
     * High single thread passmark CPUs
     * SSD storage
 * [A Domain that's managed by Cloudflare](../cloudflare/domains.md)
-* A [Cloudflare Tunnel](../cloudflare/tunnel/)&#x20;
+* A [Cloudflare Tunnel](../cloudflare/tunnel/)
 * A [Cloudflare DDNS container with proxy turned off](../cloudflare/dynamic-dns.md) (this address will be your game server IP. Eg play.yourdomain.com)
 
 ### Recommended
 
 * [Portainer & GitOps](../portainer-and-gitops/)
-* A seperate server for the Panel and each Wings node
+* A separate server for the Panel and each Wings node (if setting up more than 1)
