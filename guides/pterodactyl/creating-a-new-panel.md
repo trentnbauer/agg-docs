@@ -6,15 +6,15 @@
 
 ### Setting up the Portainer stack
 
-Create your Portainer stack using the below compose and env file
+Create your Portainer stack using the below compose and .env file
 
-_I would recommend deploying GitOps (have a look at the_ [broken-reference](broken-reference/ "mention") _guide) as this will shift your compose file off of your server and into GitOps and manage container updates for you_
+_I would recommend deploying GitOps_ [_(have a look at the this_ _guide)_](../portainer-and-gitops/) _as this will shift your compose file off of your server and into GitHub._
 
 {% @github-files/github-code-block url="https://github.com/trentnbauer/agg/blob/main/docker-compose/pterodactyl-panel.yml" %}
 
-<pre class="language-editorconfig" data-title=".ENV File"><code class="lang-editorconfig">MYSQL_PASS=
+{% code title=".ENV File" %}
+```editorconfig
 MYSQL_PASS_ROOT=
-PORT_DB=
 PORT_HTTP=
 MAIL_FROM=
 MAIL_SERVER=smtp.gmail.com
@@ -23,9 +23,9 @@ MAIL_USERNAME=youremail@gmail.com
 MAIL_PASS=
 PTERO_PANEL_URL=https://panel.example.com #your cloudflare subdomain
 TZ=
-HASHIDS_SALT=   #This MUST be a 20 character string, per https://github.com/pterodactyl/panel/issues/5012#issuecomment-1960789655
-<strong>HEALTHCHECK= #this will be your hostname+PORT_HTTP, eg http://myserver:80
-</strong></code></pre>
+HASHIDS_SALT= #This MUST be a 20 character string, per https://github.com/pterodactyl/panel/issues/5012#issuecomment-1960789655
+```
+{% endcode %}
 
 ### Confirm the Panel is running
 
