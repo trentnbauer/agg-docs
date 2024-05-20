@@ -81,27 +81,24 @@ Confirm that the resolved IP address matches your [public IP](https://whatismyip
 
 There are multiple areas where this can go wrong. Let's narrow it down, please refer to the below image.
 
-<img src="../../.gitbook/assets/file.excalidraw.svg" alt="An example network map" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw.svg" alt="This network map assumes you are hosting your server in the same house / network as your personal PC. You may have additional devices, like network switches, WiFi etc. Generally, these devices won&#x27;t cause the issue you&#x27;re seeing, but they may." class="gitbook-drawing">
 
-The above network map should be relatively similar to your home network. We have 5 devices,
+The above network map should be relatively similar to your home network. We have 4 devices,
 
-1. Wings Node
+1. Wings Node, where the game server is hosted
 2. Your gaming PC
-3. network switch (you may not have one of these)
-4. firewall
-5. friend's computer
+3. A Firewall / Modem / Router
+4. friend's computer
 
-_\*\*\*This network map assumes you are hosting your server in the same house / network as your personal PC_
-
-**Our end goal is for the purple line (friends computer to pterodactyl node and back) to work.**
+**Our end goal is for the purple line (friends computer to pterodactyl node) to work.**
 
 There are a few places that this line can fail,
 
-1. [Connecting to the internet domain / IP (and not reaching the modem)](troubleshooting.md#1.-confirm-there-is-not-an-ddns-issue)
+1. Connecting to the Domain (DNS issue) or IP address
 2. Bad port forwarding config in the modem
-3. [Bad firewall config in the Pterodactyl node](creating-a-new-wings-node.md#allow-ports-through-the-firewall)
+3. Bad firewall config in the Pterodactyl node
 4. Bad game server installation config
-5. ISP blocking port or port forwarding completely
+5. ISP blocking the port or port forwarding completely
 6. Your ISP uses CGNAT
 
 #### Option 3 is the easiest to confirm
@@ -111,10 +108,10 @@ To do this, we'll follow the orange line.
 1. Get the LAN IP address for your Pterodactyl node. This is likely to start with 192.x.x.x, 10.x.x.x or 172.x.x.x
 2. Connect to your game server via the internal IP:port, eg `192.168.1.20:25565`
 
-<details>
 
-<summary>I cannot connect to the server via local IP:PORT</summary>
 
+{% tabs %}
+{% tab title="I cannot connect to the server via local IP:PORT" %}
 1. SSH onto your Pterodactyl node
 2. Disable the firewall\
    If you are using Ubuntu, the command is listed below\
@@ -130,13 +127,9 @@ If this does not work,&#x20;
 * you are looking at the wrong port
 
 Refer back to Pterodactyl Panel and check if the server is running and on what ports
+{% endtab %}
 
-</details>
-
-<details>
-
-<summary>I can connect to the server via local IP:PORT</summary>
-
+{% tab title="I can connect to the server via local IP:PORT" %}
 Most likely your port forward or (IF you are using a domain) your Domains DNS is bad.
 
 have your friend connect via your [public IP address](https://whatismyipaddress.com/) and server port, eg `1.2.3.4:25565`
@@ -155,8 +148,8 @@ If connecting directly to your public IP fails, confirm your port forward rule a
 **Your ISP may be using CGNAT.** You will need to contact your ISP to have this resolved. I would recommend googling `my isp name cgnat` and reading the results. Port forwarding will NEVER work behind a CGNAT without additional and complex network infrastructure.
 
 Extra: You can use [this website](https://www.yougetsignal.com/tools/open-ports/) to test if a port is open (waiting for connections). Minecraft is a great server to test for this, as there are plenty of tools for testing things, [like this](https://mcsrvstat.us/)
-
-</details>
+{% endtab %}
+{% endtabs %}
 
 ## Pterodactyl Panel errors
 
