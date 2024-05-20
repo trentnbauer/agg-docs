@@ -8,52 +8,53 @@ _This guide is assuming you're hosting the server in your home network, not on a
 
 ### Confirm there is not an DDNS issue
 
-_You can skip troubleshooting DDNS by trying to connect to your public IP instead_
+_You can skip troubleshooting DDNS by trying to connect to your_ [_public IP_](https://whatismyipaddress.com/) _instead_
 
 1. Go to google and search 'what is my IP' and take note of the IP address
-2. Launch CMD or the shell of your choice
-3. Type ping `YOUR.DDNS.ADDRESS.HERE` and hit enter\
+2. Launch `CMD` or the shell of your choice
+3. Type `ping YOUR.DDNS.ADDRESS.HERE` and hit enter\
    eg `ping play.reallycoolservers.com`
-4. Take note of the output, you should see something similar to the below results
+4. Take note of the output and refer to the below table
 
-#### Successful ping
+{% tabs %}
+{% tab title="Successful Ping" %}
+<pre data-overflow="wrap"><code>C:\Users\x>ping play.reallycoolservers.com
 
-```
-C:\Users\x>ping play.reallycoolservers.com
+Pinging play.reallycoolservers.com [123.123.123.123] with 32 bytes of data: 
+Reply from 123.123.123.123: bytes=32 time&#x3C;1ms TTL=64 
+Reply from 123.123.123.123: bytes=32 time&#x3C;1ms TTL=64 
+Reply from 123.123.123.123: bytes=32 time&#x3C;1ms TTL=64 
+Reply from 123.123.123.123: bytes=32 time&#x3C;1ms TTL=64
 
-Pinging play.agamersgrind.com [123.123.123.123] with 32 bytes of data: 
-Reply from 123.123.123.123: bytes=32 time<1ms TTL=64 
-Reply from 123.123.123.123: bytes=32 time<1ms TTL=64 
-Reply from 123.123.123.123: bytes=32 time<1ms TTL=64 
-Reply from 123.123.123.123: bytes=32 time<1ms TTL=64
+Ping statistics for 123.123.123.123: <a data-footnote-ref href="#user-content-fn-1">Packets: Sent = 4, Received = 4</a>, Lost = 0 (0% loss), Approximate round trip times in milli-seconds: Minimum = 0ms, Maximum = 0ms, Average = 0ms
+</code></pre>
 
-Ping statistics for 123.123.123.123: Packets: Sent = 4, Received = 4, Lost = 0 (0% loss), Approximate round trip times in milli-seconds: Minimum = 0ms, Maximum = 0ms, Average = 0ms
-```
-
-A server has responded to your pings, great!
+#### A server has responded to your pings, great!
 
 1. Confirm that the IP address matches your Google result
    * If it matches, great! Skip to
    * If it doesn't match, there is an issue with your DDNS container. Review the logs for the container
 
-#### Unable to resolve DDNS
+**Continue to the next step**
+{% endtab %}
 
-```
-C:\Users\x>ping play.reallycoolservers.com
+{% tab title="Could not find host" %}
+<pre><code>C:\Users\x>ping play.reallycoolservers.com
 
-Ping request could not find host play.reallycoolservers.com. Please check the name and try again.
-```
+<a data-footnote-ref href="#user-content-fn-2">Ping request could not find host play.reallycoolservers.com</a>. Please check the name and try again.
+</code></pre>
 
-Your DDNS config is incorrect OR you've made a typo in your ping command.
+#### Your DDNS config is incorrect OR you've made a typo in your ping command.
 
 1. Firstly, review your ping command and ensure the address is correct
-   * If it is correct, there is an issue with your DDNS container. Review the logs for that container
-   * If you've made a typo, redo the test with the correct address
+   * If it is correct, there is an issue with your DDNS container. Review the logs for that container. Feel free to refer to my existing [dynamic-dns.md](../cloudflare/dynamic-dns.md "mention") documentation
+   * If you've made a typo in the address, redo the test with the correct address
 
-#### DNS resolves but server does not respond
+**This needs to be resolved before you can continue any further**
+{% endtab %}
 
-```
-C:\Users\x>ping play.reallycoolservers.com
+{% tab title="Resolves IP but fails to connect" %}
+<pre data-overflow="wrap"><code>C:\Users\x>ping play.reallycoolservers.com
 
 Pinging play.reallycoolservers.com [123.123.123.123] with 32 bytes of data:
 Request timed out.
@@ -62,14 +63,19 @@ Request timed out.
 Request timed out.
 
 Ping statistics for 123.123.123.123:
-    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
-```
+    <a data-footnote-ref href="#user-content-fn-3">Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),</a>
+</code></pre>
 
-You have resolved an IP address but the server does not respond to pings
+#### You have resolved an IP address but the server does not respond to pings
 
-1. Confirm that the IP address matches your IP
-   * If the IP address matches, this isn't a bad thing - some firewalls are configured to NOT respond to pings as a security measure.
-   * If the IP address does not match, there is something wrong with your DDNS container. Review the logs for the container
+Confirm that the resolved IP address matches your [public IP](https://whatismyipaddress.com/)
+
+* If the IP address matches, this isn't a bad thing - some firewalls are configured to NOT respond to pings as a security measure.
+* If the IP address does not match, there is something wrong with your DDNS container. Review the logs for the container. Feel free to refer to my existing [dynamic-dns.md](../cloudflare/dynamic-dns.md "mention") documentation
+
+**This needs to be resolved before you can continue any further**
+{% endtab %}
+{% endtabs %}
 
 ### Narrow down the issue
 
@@ -83,7 +89,7 @@ The above network map should be relatively similar to your home network. We have
 2. Your gaming PC
 3. network switch (you may not have one of these)
 4. firewall
-5. friends computer
+5. friend's computer
 
 _\*\*\*This network map assumes you are hosting your server in the same house / network as your personal PC_
 
@@ -93,7 +99,7 @@ There are a few places that this line can fail,
 
 1. [Connecting to the internet domain / IP (and not reaching the modem)](troubleshooting.md#1.-confirm-there-is-not-an-ddns-issue)
 2. Bad port forwarding config in the modem
-3. Bad firewall config in the Pterodactyl node
+3. [Bad firewall config in the Pterodactyl node](creating-a-new-wings-node.md#allow-ports-through-the-firewall)
 4. Bad game server installation config
 5. ISP blocking port or port forwarding completely
 6. Your ISP uses CGNAT
@@ -115,9 +121,15 @@ To do this, we'll follow the orange line.
    `sudo UFW disable`
 3. Attempt to connect to the server via the internal IP:port
 
-If it works, you will need to allow the port/s through the Firewall rule. Please refer back to the documentation, this is already outlined. You may have missed additional steps.
+If it works, you will need to allow the port/s through the Firewall rule. [Please refer back to the documentation, this step is already outlined](creating-a-new-wings-node.md#allow-ports-through-the-firewall). You may have missed additional steps.
 
-If this does not work, the server is not running or you are looking at the wrong server or port.
+If this does not work,&#x20;
+
+* the game server is not running
+* you are looking at the wrong server or
+* you are looking at the wrong port
+
+Refer back to Pterodactyl Panel and check if the server is running and on what ports
 
 </details>
 
@@ -199,3 +211,9 @@ If not, please re-read the documentaiton as you may have missed other steps too.
 ### Game is unable to connect to Pterodactyl database
 
 Try connecting via IP. This may be a docker DNS issue.
+
+[^1]: sent 4, recieved 4. The connection is good
+
+[^2]: Could not find host. DDNS config is bad
+
+[^3]: Sent 4, recieved 0. Fail
