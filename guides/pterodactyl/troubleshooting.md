@@ -157,3 +157,19 @@ I'm trying to find a way to make a 'chose your own adventure' style book for thi
     </strong></code></pre>
 
 If you get different messages, you may not have applied the config file correctly
+
+
+
+## Database issues
+
+### Create a new database - An unexpected error was encountered while processing this request. please try again
+
+Have you set the HASHID variable per [creating-a-new-panel.md](creating-a-new-panel.md "mention") documentation?&#x20;
+
+If not, please re-read the documentaiton as you may have missed other steps too...&#x20;
+
+
+
+### Game is unable to connect to Pterodactyl database
+
+Try connecting via IP. This may be a docker DNS issue.

@@ -5,8 +5,7 @@
 ## 🏙️ --- Public Files ---
 
 * [👋 Welcome, friends](README.md)
-* [⚔️ Discord](https://discord.xfgn.dev)
-* [📋 GitHub](https://github.com/trentnbauer/agg)
+* [⛑️ I need help!](public-files/i-need-help.md)
 * [☕ Buy me a Coffee](https://www.paypal.com/paypalme/x4rdoniak)
 
 ## 📚 Guides
