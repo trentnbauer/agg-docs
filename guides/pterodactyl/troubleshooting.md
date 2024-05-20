@@ -1,12 +1,12 @@
 # Troubleshooting
 
-## Just set up Pterodactyl, friend can't join server
+## Can't join Game Server/s
 
 This section is to assist with troubleshooting port forwards, firewall rules and DDNS issues.
 
 _This guide is assuming you're hosting the server in your home network, not on a cloud host._
 
-### 1. Confirm there is not an DDNS issue
+### Confirm there is not an DDNS issue
 
 _You can skip troubleshooting DDNS by trying to connect to your public IP instead_
 
@@ -71,25 +71,23 @@ You have resolved an IP address but the server does not respond to pings
    * If the IP address matches, this isn't a bad thing - some firewalls are configured to NOT respond to pings as a security measure.
    * If the IP address does not match, there is something wrong with your DDNS container. Review the logs for the container
 
-### 2. Narrow down the issue
+### Narrow down the issue
 
-There are multiple areas where this can go wrong. Lets narrow it down, please refer to the below image.
+There are multiple areas where this can go wrong. Let's narrow it down, please refer to the below image.
 
-<div data-full-width="true">
-
-<figure><img src="../../.gitbook/assets/example-network-mappng.png" alt=""><figcaption><p>An example network map</p></figcaption></figure>
-
-</div>
+<img src="../../.gitbook/assets/file.excalidraw.svg" alt="An example network map" class="gitbook-drawing">
 
 The above network map should be relatively similar to your home network. We have 5 devices,
 
-1. Pterodactyl Node
+1. Wings Node
 2. Your gaming PC
 3. network switch (you may not have one of these)
 4. firewall
 5. friends computer
 
-Our end goal is for the red line (friends computer to pterodactyl node and back) to work.
+_\*\*\*This network map assumes you are hosting your server in the same house / network as your personal PC_
+
+**Our end goal is for the purple line (friends computer to pterodactyl node and back) to work.**
 
 There are a few places that this line can fail,
 
@@ -97,30 +95,66 @@ There are a few places that this line can fail,
 2. Bad port forwarding config in the modem
 3. Bad firewall config in the Pterodactyl node
 4. Bad game server installation config
+5. ISP blocking port or port forwarding completely
+6. Your ISP uses CGNAT
 
 #### Option 3 is the easiest to confirm
 
-To do this, we'll follow the green line.
+To do this, we'll follow the orange line.
 
 1. Get the LAN IP address for your Pterodactyl node. This is likely to start with 192.x.x.x, 10.x.x.x or 172.x.x.x
-2. Connect to your game server via the internal IP:port, eg 192.168.1.20:25565
+2. Connect to your game server via the internal IP:port, eg `192.168.1.20:25565`
 
-#### Fails to connect
+<details>
+
+<summary>I cannot connect to the server via local IP:PORT</summary>
 
 1. SSH onto your Pterodactyl node
 2. Disable the firewall\
-   If you are using Ubuntu, the command is listed below
-
-<pre><code><strong>sudo UFW disable
-</strong></code></pre>
-
+   If you are using Ubuntu, the command is listed below\
+   `sudo UFW disable`
 3. Attempt to connect to the server via the internal IP:port
 
-#### Connects successfully
+If it works, you will need to allow the port/s through the Firewall rule. Please refer back to the documentation, this is already outlined. You may have missed additional steps.
 
+If this does not work, the server is not running or you are looking at the wrong server or port.
 
+</details>
 
-## FATAL: failed to configure docker environment error=Error response from daemon: Pool overlaps with other one on this address space
+<details>
+
+<summary>I can connect to the server via local IP:PORT</summary>
+
+Most likely your port forward or (IF you are using a domain) your Domains DNS is bad.
+
+have your friend connect via your [public IP address](https://whatismyipaddress.com/) and server port, eg `1.2.3.4:25565`
+
+**If your friends are connecting via IP, skip this step.** Browse to [this website](https://whatismyipaddress.com/) to get your public IP address and [ping your domain](https://www.youtube.com/watch?v=TWZMVM\_7csE). If the IP does not match, the DNS is incorrect. If so, you most likely have a dynamic DNS address - refer to [dynamic-dns.md](../cloudflare/dynamic-dns.md "mention") for a solution. Alternatively, your ISP may provide a static IP address at an additional cost.
+
+If connecting directly to your public IP fails, confirm your port forward rule applies to the
+
+* correct local IP
+* correct port
+
+**If it still fails to connect:**
+
+**your ISP may be blocking port forwards.** I would suggest doing some Googling on your router / modem model to confirm your port forward rule has the correct syntax as some modems are awkward. You may have luck searching for `my modem model port forward minecraft server` but if you have no luck, you will need to ring your ISP.
+
+**Your ISP may be using CGNAT.** You will need to contact your ISP to have this resolved. I would recommend googling `my isp name cgnat` and reading the results. Port forwarding will NEVER work behind a CGNAT without additional and complex network infrastructure.
+
+Extra: You can use [this website](https://www.yougetsignal.com/tools/open-ports/) to test if a port is open (waiting for connections). Minecraft is a great server to test for this, as there are plenty of tools for testing things, [like this](https://mcsrvstat.us/)
+
+</details>
+
+## Pterodactyl Panel errors
+
+### Error 500
+
+Yeah its broken! Post on the Pterodactyl discord for assistance.
+
+## Wings Errors
+
+### FATAL: failed to configure docker environment error=Error response from daemon: Pool overlaps with other one on this address space
 
 Wings has defaulted to a docker network range that is in-use. The easiest way to resolve this is to edit your config.yml file, per step [#upload-configuration-file-to-wings](creating-a-new-wings-node.md#upload-configuration-file-to-wings "mention")to include the below lines
 
@@ -137,15 +171,7 @@ Please note: The IP range for 172 is quite small - 172.16 to 172.31. You may be 
 
 
 
-EDIT:
-
-I'm trying to find a way to make a 'chose your own adventure' style book for this, where you click on your options and it goes through the relevant troubleshooting steps with you.
-
-
-
-## Panel is unable to see Node
-
-### Confirm the Container is working
+### Panel is unable to see Node
 
 1. Start the Wings container if it not running
 2.  Check your docker logs, you should see something similar to below
