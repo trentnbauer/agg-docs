@@ -17,16 +17,16 @@ Our goal is to import our domain into CF, or purchase one through them. This all
 
 _Manage your existing domain via Cloudflare_
 
-#### Migrate registrar to Cloudflare (recommended)
+#### Migrate Domain to Cloudflare (recommended)
 
 _If your domain is registered with a different party but you don't have anything set up (eg email), this is the best path to take_
 
 [Please refer to Cloudflare documentation](https://developers.cloudflare.com/registrar/get-started/transfer-domain-to-cloudflare/#set-up-a-domain-transfer)
 
-#### Forward your DNS
+#### Change your domains nameservers
 
-_If your domain is registered through a different party and you have configured services on it (such as email) or Cloudflare is more expensive, this is the recommended path_
+[_If your domain is registered through a different party and you have configured services on it (such as email) or Cloudflare is more expensive, this is the recommended path_](https://developers.cloudflare.com/dns/zone-setups/full-setup/setup/)
 
 ### New Domain
 
-_Purchase a new domain through Cloudflare_
+[_Purchase a new domain through Cloudflare_](https://www.cloudflare.com/en-au/products/registrar/)
