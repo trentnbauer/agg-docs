@@ -21,11 +21,11 @@ _Manage your existing domain via Cloudflare_
 
 _If your domain is registered with a different party but you don't have anything set up (eg email), this is the best path to take_
 
-#### Forward your DNS&#x20;
+[Please refer to Cloudflare documentation](https://developers.cloudflare.com/registrar/get-started/transfer-domain-to-cloudflare/#set-up-a-domain-transfer)
 
-_If your domain is registred through a different party and you have configured services on it (such as email) or Cloudflare is more expensive, this is the recommended path_
+#### Forward your DNS
 
-
+_If your domain is registered through a different party and you have configured services on it (such as email) or Cloudflare is more expensive, this is the recommended path_
 
 ### New Domain
 
