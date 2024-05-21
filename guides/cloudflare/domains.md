@@ -1,4 +1,4 @@
-# ❔ Domains
+# Domains
 
 <table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Time Required</td><td>Unknown</td></tr><tr><td>Difficulty</td><td>Moderate</td></tr></tbody></table>
 
