@@ -8,7 +8,7 @@ _This guide is assuming you're hosting the server in your home network, not on a
 
 ### Confirm there is not an DDNS issue
 
-_You can skip troubleshooting DDNS by trying to connect to your_ [_public IP_](https://whatismyipaddress.com/) _instead_
+_You can skip troubleshooting DDNS by trying to connect to your game server via your_ [_public IP_](https://whatismyipaddress.com/) _instead_
 
 1. Go to google and search 'what is my IP' and take note of the IP address
 2. Launch `CMD` or the shell of your choice
@@ -101,35 +101,15 @@ There are a few places that this line can fail,
 5. ISP blocking the port or port forwarding completely
 6. Your ISP uses CGNAT
 
-#### Option 3 is the easiest to confirm
+#### Option 3 is the easiest to confirm;
 
-To do this, we'll follow the orange line.
+To do this, we'll follow the orange line in the network map above
 
-1. Get the LAN IP address for your Pterodactyl node. This is likely to start with 192.x.x.x, 10.x.x.x or 172.x.x.x
+1. Get the LAN IP address for your Wings node. This is likely to start with 192.x.x.x, 10.x.x.x or 172.x.x.x
 2. Connect to your game server via the internal IP:port, eg `192.168.1.20:25565`
 
-
-
 {% tabs %}
-{% tab title="I cannot connect to the server via local IP:PORT" %}
-1. SSH onto your Pterodactyl node
-2. Disable the firewall\
-   If you are using Ubuntu, the command is listed below\
-   `sudo UFW disable`
-3. Attempt to connect to the server via the internal IP:port
-
-If it works, you will need to allow the port/s through the Firewall rule. [Please refer back to the documentation, this step is already outlined](creating-a-new-wings-node.md#allow-ports-through-the-firewall). You may have missed additional steps.
-
-If this does not work,&#x20;
-
-* the game server is not running
-* you are looking at the wrong server or
-* you are looking at the wrong port
-
-Refer back to Pterodactyl Panel and check if the server is running and on what ports
-{% endtab %}
-
-{% tab title="I can connect to the server via local IP:PORT" %}
+{% tab title="I can join the server" %}
 Most likely your port forward or (IF you are using a domain) your Domains DNS is bad.
 
 have your friend connect via your [public IP address](https://whatismyipaddress.com/) and server port, eg `1.2.3.4:25565`
@@ -148,6 +128,31 @@ If connecting directly to your public IP fails, confirm your port forward rule a
 **Your ISP may be using CGNAT.** You will need to contact your ISP to have this resolved. I would recommend googling `my isp name cgnat` and reading the results. Port forwarding will NEVER work behind a CGNAT without additional and complex network infrastructure.
 
 Extra: You can use [this website](https://www.yougetsignal.com/tools/open-ports/) to test if a port is open (waiting for connections). Minecraft is a great server to test for this, as there are plenty of tools for testing things, [like this](https://mcsrvstat.us/)
+{% endtab %}
+
+{% tab title="Unable to join the server" %}
+Firstly, lets confirm things are OK by
+
+* Ping your server and confirm it responds
+* Reboot your server
+
+If all of the above is ok / has been done;
+
+1. SSH onto your Pterodactyl node
+2. Disable the firewall\
+   If you are using Ubuntu, the command is listed below\
+   `sudo UFW disable`
+3. Attempt to connect to the server via the internal IP:port
+
+If it works, you will need to allow the port/s through the Firewall rule. [Please refer back to the documentation, this step is already outlined](creating-a-new-wings-node.md#allow-ports-through-the-firewall). You may have missed additional steps as well.
+
+If this does not work,&#x20;
+
+* the game server is not running
+* you are looking at the wrong server or
+* you are looking at the wrong port
+
+Refer back to Pterodactyl Panel and check if the server is running and on what ports
 {% endtab %}
 {% endtabs %}
 
@@ -178,7 +183,7 @@ Please note: The IP range for 172 is quite small - 172.16 to 172.31. You may be 
 
 ### Panel is unable to see Node
 
-1. Start the Wings container if it not running
+1. Start the Wings container if its not running
 2.  Check your docker logs, you should see something similar to below
 
     <figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
@@ -187,9 +192,7 @@ Please note: The IP range for 172 is quite small - 172.16 to 172.31. You may be 
     <pre><code><strong>{"error":"The required authorization heads were not present in the request."}
     </strong></code></pre>
 
-If you get different messages, you may not have applied the config file correctly
-
-
+If you get different messages, you may not have applied the config file correctly. Refer to [creating-a-new-wings-node.md](creating-a-new-wings-node.md "mention")
 
 ## Database issues
 
@@ -197,11 +200,9 @@ If you get different messages, you may not have applied the config file correctl
 
 Have you set the HASHID variable per [creating-a-new-panel.md](creating-a-new-panel.md "mention") documentation?&#x20;
 
-If not, please re-read the documentaiton as you may have missed other steps too...&#x20;
+If not, please re-read the documentation as you may have missed other steps too...&#x20;
 
-
-
-### Game is unable to connect to Pterodactyl database
+### Game is unable to connect to server database
 
 Try connecting via IP. This may be a docker DNS issue.
 
