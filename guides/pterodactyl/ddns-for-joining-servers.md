@@ -20,7 +20,7 @@ Some things to note with using a domain;
 
 ## Static IP
 
-If you have a static IP you can manually set an A record in your DNS, pointing towards your IP
+If you have a static IP you can manually set an A record in your Domains DNS, pointing towards your IP
 
 ## Dynamic IP
 
@@ -28,4 +28,3 @@ Follow the instructions listed in [dynamic-dns.md](../cloudflare/dynamic-dns.md 
 
 * The Proxied variable MUST be 'false', otherwise your players will not be able to join.
 * This container is required per public IP you have. I would recommend installing this container on your Wings host, as that is the server players will be connecting too. If each Wings host has a different IP, you will need a different subdomain per IP.
-
