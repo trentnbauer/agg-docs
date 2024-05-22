@@ -102,7 +102,7 @@ Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostn
 {% endtab %}
 {% endtabs %}
 
-
+### Restart the container to load the config file
 
 1. Click on Stacks and open your Wings stack
 2. Restart the stack and wait 30 seconds
