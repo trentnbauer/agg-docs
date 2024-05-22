@@ -1,4 +1,4 @@
-# Cloudflare Domain to Google Sites
+# Redirect domain to Google Site
 
 
 
@@ -10,9 +10,9 @@ In this scenario, we're redirecting a domain managed by Cloudflare to a Google S
 
 ### Prerequisites
 
-* A Google account
+* [A Google account](https://accounts.google.com/)
 * [A website built in Google Sites](https://sites.google.com/new)
-* A domain managed by Cloudflare
+* [A domain managed by Cloudflare](../cloudflare/domains.md)
 
 Domains managed by other providers can be redirected to Google sites but I don't know anything about that. If your domain is managed elsewhere, you may be able to follow some of this guide but I will not be able to assist you with troubleshooting
 
@@ -23,7 +23,10 @@ Connect your domain to your Google Site
 1. Click on the settings cog in the top right
 2. In the menu, select Custom Domains
 3. Click on Add
-4. Input your domain (I recommend leaving the www as is but it is possible to host multiple websites under the same domain, using [subdomains](https://static.semrush.com/blog/uploads/media/fa/70/fa70fafcbf91927caa27d6d418d83aa1/original.png))
+4.  Leave the subdomain as www and input your domain\
+
+
+    <figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption><p><em>It is possible to host multiple websites under the same domain, using</em> <a href="https://static.semrush.com/blog/uploads/media/fa/70/fa70fafcbf91927caa27d6d418d83aa1/original.png"><em>subdomains</em></a> <em>but this guide will not cover that</em></p></figcaption></figure>
 
 <details>
 
@@ -40,8 +43,10 @@ You may need to backspace and retype the domain
 
 </details>
 
-5. Click on Next and you will be provided with the below information\
-   ![](../../.gitbook/assets/image.png)
+5.  Click on Next and you will be provided with the below information\
+
+
+    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Configure Cloudflare DNS
 
@@ -62,12 +67,13 @@ I highly recommend following this, as by default going to `mydomain.com` will no
 3.  Click on "Add Record" , input the below and hit Save\
 
 
-    <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>The IPv4 address does not matter, as we are proxy-ing this data via Cloudflare. The proxy checkbox enables with redirect rule to work. You could use 1.2.3.4 and it will be fine.</p></figcaption></figure>
 4. On the left, click on Rules > Redirect rules
-5.  Create a new rule and input the below (don't forget to change the domain address for your domain, highlighted in yellow)\
-
+5.  Create a new rule and input the below (don't forget to change the domain address for your domain, highlighted in yellow)
 
     <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+    `concat("https://www.mydomain.com", http.request.uri.path)`
 6. Click on Deploy
 
 You will now need to wait some time for the rules to apply, sometimes this is very slow.
