@@ -64,7 +64,7 @@ Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostn
    * Provide the FQDN of your Node (this is the externally available reverse proxy address configured here [#configure-the-reverse-proxy](creating-a-new-wings-node.md#configure-the-reverse-proxy "mention"))
    * Tick 'Use SSL Connection'
    * Tick 'Behind Proxy'
-   * Provide RAM & over allocation of the machine or VM
+   * Provide RAM & RAM over allocation of the machine or VM
    * Provide the disk space & over allocation of the machine or VM
    * Set your Daemon port to 443 (As Cloudflare uses 443 for its proxy)
    *   Click on 'Create Node'
@@ -74,22 +74,39 @@ Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostn
 ### Upload Configuration file to Wings
 
 1. In Pterodactyl, click on 'Nodes' on the left
-2.  You should see your new Node, with a red heart\\
+2.  You should see your new Node, with a red heart
 
     <figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 3.  Click on your new node, then the Configuration tab and confirm that the highlighted lines are the same as mine
 
     <figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption><p><em>I would also recommend changing the upload limit to 1024</em></p></figcaption></figure>
 4. Copy the contents of the file and save it as 'config.yml'
-5. Log into Portainer and click on the Wings host
-6. Click on 'Stacks' and select the 'wings' stack
-7. Click on 'Stop stack'
-8. Click on 'Volumes'
-9. Locate the Wings 'config' volume - it will be named after your stack (eg wings\_config) and click on Browse
-10. Click on the Upload button, then select your config.yml file
-11. Click on Stacks and open your Wings stack
-12. Restart the stack and wait 30 seconds
-13. Refresh the Pterodactyl Nodes page and it should now be connected
+
+{% tabs %}
+{% tab title="Using Portainer Edge Agent" %}
+1. Log into Portainer and click on the Wings host
+2. Click on 'Stacks' and select the 'wings' stack
+3. Click on 'Stop stack'
+4. Click on 'Volumes'
+5. Locate the Wings 'config' volume - it will be named after your stack (eg wings\_config) and click on Browse
+6. Click on the Upload button, then select your config.yml file
+{% endtab %}
+
+{% tab title="Not using Edge Agent" %}
+1. SSH onto your Wings Node
+2. Run the command `docker volume list` and locate the Wings Config volume
+3. Run the command docker `volume inspect <VolumeNameHere>` to get the mountpath of the volume
+4. CD to the mountpath
+5. run command `nano config.yml` and paste in the contents of the config file
+6. Press `CTRL + O`, then `Enter` to save the config file
+{% endtab %}
+{% endtabs %}
+
+
+
+1. Click on Stacks and open your Wings stack
+2. Restart the stack and wait 30 seconds
+3.  Refresh the Pterodactyl Nodes page and it should now be connected
 
     <figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
