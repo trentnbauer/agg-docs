@@ -20,7 +20,7 @@
   * [Create your first GipOps Compose file](guides/portainer-and-gitops/create-your-first-gipops-compose-file.md)
   * [Deploy your first GitOps stack](guides/portainer-and-gitops/deploy-your-first-gitops-stack.md)
   * [Managing your production compose files](guides/portainer-and-gitops/managing-your-production-compose-files.md)
-* [❔ Cloudflare](guides/cloudflare/README.md)
+* [Cloudflare](guides/cloudflare/README.md)
   * [Domains](guides/cloudflare/domains.md)
   * [Generate an API Key](guides/cloudflare/generate-an-api-key.md)
   * [Tunnel](guides/cloudflare/tunnel/README.md)
