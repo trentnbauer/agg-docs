@@ -11,7 +11,7 @@
 ## 📚 Guides
 
 * [Mini Guides](guides/mini-guides/README.md)
-  * [Cloudflare Domain to Google Sites](guides/mini-guides/cloudflare-domain-to-google-sites.md)
+  * [Redirect domain to Google Site](guides/mini-guides/redirect-domain-to-google-site.md)
   * ['All' Compose File](guides/mini-guides/all-compose-file.md)
   * [Add Health Check to Container](guides/mini-guides/add-health-check-to-container.md)
 * [Portainer and GitOps](guides/portainer-and-gitops/README.md)
