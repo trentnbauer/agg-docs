@@ -51,7 +51,7 @@ In this practice, we're going to deploy the Ombi compose file we created in [cre
        * BASE\_URL
        * PORT\_HTTP
 
-       <figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
    8. Provide your TZ per the ['tz identifier' here](https://en.wikipedia.org/wiki/List\_of\_tz\_database\_time\_zones)
    9. Provide a base url, if you are using one (not required)
    10. Provide the port that Ombi will use
