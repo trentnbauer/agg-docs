@@ -1,5 +1,7 @@
 # Valheim Private
 
+#### Having issues with FPS? Check out [valheim-fps-boost.md](../guides/mini-guides/valheim-fps-boost.md "mention")
+
 ## Server Application
 
 AGG's Private Valheim server is a community orientated, no griefing server. We've employed an application process on our Discord server, which requires you to submit an application before being able to join the game. This is to ensure you are joining for the benefit of the existing community.
