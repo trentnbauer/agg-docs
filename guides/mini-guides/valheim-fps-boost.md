@@ -2,24 +2,28 @@
 
 ## Launch Options
 
-You can add some lines to the launch options in Steam to enable dedicated fullscreen and additional GPU resources. The game, by default, will run in DirectX mode - I recommend trying both DX and Vulkan to see what performs best on your system.
+You can add some lines to the launch options in Steam to enable dedicated Fullscreen and additional GPU resources. The game, by default, will run in DirectX Borderless mode.
 
-### Launch Option Settings
+_I would recommend first trying Vulkan and DirectX borderless variants and see what gives you the most FPS. After that, try the Fullscreen variant and see if that is better or worse. I found that Vulkan Borderless performed best for me (i5 12500, 3060 Ti)_
 
 {% tabs %}
-{% tab title="DirectX, fullscreen" %}
+{% tab title="DirectX Renderer" %}
+#### Borderless (native)
+
+`-console -gfx-enable-gfx-jobs -gfx-enable-native-gfx-jobs`
+
+#### Exclusive Fullscreen
+
 `-window-mode exclusive -screen-fullscreen -console -gfx-enable-gfx-jobs -gfx-enable-native-gfx-jobs`
 {% endtab %}
 
-{% tab title="DirectX, borderless" %}
-`-console -gfx-enable-gfx-jobs -gfx-enable-native-gfx-jobs`
-{% endtab %}
+{% tab title="Vulkan Renderer" %}
+#### Borderless (native)
 
-{% tab title="Vulkan, fullscreen" %}
-`-window-mode exclusive -screen-fullscreen -console -gfx-enable-gfx-jobs -gfx-enable-native-gfx-jobs -force-vulkan`
-{% endtab %}
+`-console -gfx-enable-gfx-jobs -gfx-enable-native-gfx-jobs -force-vulkan`
 
-{% tab title="Vulkan, borderlness" %}
+#### Exclusive Fullscreen
+
 `-window-mode exclusive -screen-fullscreen -console -gfx-enable-gfx-jobs -gfx-enable-native-gfx-jobs -force-vulkan`
 {% endtab %}
 {% endtabs %}
@@ -44,8 +48,6 @@ _This does NOT apply to modpacks launched via Thunderstore_
 3. Select the Debugging tab
 4. Locate Set launch parameters
 5. Input the launch options and click update
-
-_I would recommend first trying Vulkan and DirectX borderless variants and see what gives you the most FPS. After that, try the fullscreen variant and see if that is better or worse. I found that Borderless was best for me._
 
 ## Boot file
 
