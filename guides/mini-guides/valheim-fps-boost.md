@@ -44,9 +44,9 @@ _I would recommend first trying Vulkan and DirectX borderless variants and see w
 
 ## Boot file
 
-You can tweak the boot.config file to enable more GPU resources and increase the CPU count to Valheim.&#x20;
+You can tweak the boot.config file to enable more GPU resources and increase the CPU count to Valheim. Apparently, the boot file can be reset with updates so keep this in mind.
 
-Add the following lines onto the end of your config file;
+Options to add to your boot file;
 
 {% code title="boot.config" %}
 ```
@@ -74,7 +74,7 @@ If you are streaming or using another tool while gaming that needs some CPU, lik
 5. Open the Valheim\_Data folder
 6. Open the boot.config file in Notepad, or your text editor of preference
 7. Add the content above
-8. Update the `gc-max-time-slice=` line
+8. Update the `gc-max-time-slice=` line per [#gc-max-time-slice](valheim-fps-boost.md#gc-max-time-slice "mention")
 
 
 
