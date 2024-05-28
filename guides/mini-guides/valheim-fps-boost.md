@@ -38,10 +38,12 @@ _This does NOT apply to modpacks launched via Thunderstore_
 
 ### Xbox Store
 
+_This does NOT apply to modpacks launched via Thunderstore_
+
 1. ???
 2. No idea, sorryyyy!
 
-### Thunderstore
+### Thunderstore Modpacks
 
 1. Launch Thunderstore, select Valheim and open your modpack
 2. Select settings on the left
