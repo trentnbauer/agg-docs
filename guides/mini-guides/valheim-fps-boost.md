@@ -32,6 +32,11 @@ _This does NOT apply to modpacks launched via Thunderstore_
 2. Locate Valheim, right click > properties
 3. Select the general tab on the left, then input the launch options
 
+### Xbox Store
+
+1. ???
+2. No idea, sorryyyy!
+
 ### Thunderstore
 
 1. Launch Thunderstore, select Valheim and open your modpack
