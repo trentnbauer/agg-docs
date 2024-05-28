@@ -7,14 +7,20 @@ You can add some lines to the launch options in Steam to enable dedicated fullsc
 ### Launch Option Settings
 
 {% tabs %}
-{% tab title="DirectX" %}
+{% tab title="DirectX, fullscreen" %}
 `-window-mode exclusive -screen-fullscreen -console -gfx-enable-gfx-jobs -gfx-enable-native-gfx-jobs`
-
-
 {% endtab %}
 
-{% tab title="Vulkan" %}
-&#x20;`-window-mode exclusive -screen-fullscreen -console -gfx-enable-gfx-jobs -gfx-enable-native-gfx-jobs -force-vulkan`
+{% tab title="DirectX, borderless" %}
+`-console -gfx-enable-gfx-jobs -gfx-enable-native-gfx-jobs`
+{% endtab %}
+
+{% tab title="Vulkan, fullscreen" %}
+`-window-mode exclusive -screen-fullscreen -console -gfx-enable-gfx-jobs -gfx-enable-native-gfx-jobs -force-vulkan`
+{% endtab %}
+
+{% tab title="Vulkan, borderlness" %}
+`-window-mode exclusive -screen-fullscreen -console -gfx-enable-gfx-jobs -gfx-enable-native-gfx-jobs -force-vulkan`
 {% endtab %}
 {% endtabs %}
 
@@ -33,6 +39,8 @@ _This does NOT apply to modpacks launched via Thunderstore_
 3. Select the Debugging tab
 4. Locate Set launch parameters
 5. Input the launch options and click update
+
+_I would recommend first trying Vulkan and DirectX borderless variants and see what gives you the most FPS. After that, try the fullscreen variant and see if that is better or worse. I found that Borderless was best for me._
 
 ## Boot file
 
