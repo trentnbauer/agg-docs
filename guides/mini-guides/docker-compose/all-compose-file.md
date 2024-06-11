@@ -18,9 +18,9 @@ We're wanting to standardize;
 
 #### Recommendations
 
-* Portainer for managing docker, refer to [Broken link](broken-reference "mention") for a deployment guide
+* Portainer for managing docker, refer to [broken-reference](../broken-reference/ "mention") for a deployment guide
 
-_Please note that WatchTower is NOT a supported method for updating docker containers and automatic updates can cause issues. Please ensure you have backups of your data in case you need to roll back. I would recommend following my_ [Broken link](broken-reference "mention") _documentation as this includes a much safer solution for updating containers._
+_Please note that WatchTower is NOT a supported method for updating docker containers and automatic updates can cause issues. Please ensure you have backups of your data in case you need to roll back. I would recommend following my_ [broken-reference](../broken-reference/ "mention") _documentation as this includes a much safer solution for updating containers._
 
 _Ignoring that, I am using WatchTower to update Portainer in my environment as I am unable to update it without doing it via the CLI. In general, this is the only time I would suggest this as a solution_
 
@@ -78,8 +78,7 @@ Add the below line to the end of your `docker run` command
 1. Edit your container and scroll down to advanced settings
 2. Select Labels
 3. Click 'Add label'
-4.  Add one of the below\
-
+4.  Add one of the below\\
 
     <table><thead><tr><th width="373">Name</th><th>Value</th></tr></thead><tbody><tr><td>com.centurylinklabs.watchtower.label</td><td>daily</td></tr><tr><td>com.centurylinklabs.watchtower.label</td><td>weekly</td></tr></tbody></table>
 

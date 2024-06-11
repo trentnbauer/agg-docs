@@ -2,7 +2,7 @@
 coverY: 0
 ---
 
-# ❔ Cloudflare
+# Cloudflare
 
 <table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Time Required</td><td>1 - 2 Hours</td></tr><tr><td>Difficulty</td><td>Low</td></tr></tbody></table>
 
