@@ -52,7 +52,7 @@ In the below example, we'll configure this for the "overseerr" container. Refer 
 
 <pre class="language-yaml" data-title="Labels for the container"><code class="lang-yaml">      - dockflare.enable=${CFTUNNEL:-true}
       - dockflare.0.hostname=${CFSUBDOMAIN}${CFDOMAIN}
-<strong>      - dockflare.0.service=http://${HOSTNAME}:${WEBPORT:-5055}
+<strong>      - dockflare.0.service=http://${HOSTNAME:-localhost}:${WEBPORT:-5055}
 </strong>      - dockflare.0.access.policy=${CFPOLICY:-default_tld}
       - dockflare.0.zonename=${CFDOMAIN}
       - dockflare.0.path=${CFURLPATH:-}
@@ -63,7 +63,7 @@ In the below example, we'll configure this for the "overseerr" container. Refer 
 {% code title="Labels for the container" %}
 ```yaml
       - dockflare.0.hostname=${CFSUBDOMAIN}${CFDOMAIN}
-      - dockflare.0.service=http://${HOSTNAME}:${WEBPORT:-5055}
+      - dockflare.0.service=http://${HOSTNAME:-localhost}:${WEBPORT:-5055}
       - dockflare.0.access.policy=${CFPOLICY:-default_tld}
       - dockflare.0.zonename=${CFDOMAIN}
       - dockflare.0.path=${CFURLPATH:-}
