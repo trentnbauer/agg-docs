@@ -53,7 +53,7 @@ In the below example, we'll configure this for the "overseerr" container. Refer 
 <pre class="language-yaml" data-title="Labels for the container"><code class="lang-yaml">      - dockflare.enable=${CFTUNNEL:-true}
       - dockflare.0.hostname=${CFSUBDOMAIN}${CFDOMAIN}
 <strong>      - dockflare.0.service=http://${HOSTNAME:-localhost}:${WEBPORT:-5055}
-</strong>      - dockflare.0.access.policy=${CFPOLICY:-default_tld}
+</strong>      - dockflare.0.access.policy=${CFPOLICY:-default_tld} #default_tld, authenticate, bypass
       - dockflare.0.zonename=${CFDOMAIN}
       - dockflare.0.path=${CFURLPATH:-}
 </code></pre>
@@ -64,7 +64,7 @@ In the below example, we'll configure this for the "overseerr" container. Refer 
 ```yaml
       - dockflare.0.hostname=${CFSUBDOMAIN}${CFDOMAIN}
       - dockflare.0.service=http://${HOSTNAME:-localhost}:${WEBPORT:-5055}
-      - dockflare.0.access.policy=${CFPOLICY:-default_tld}
+      - dockflare.0.access.policy=${CFPOLICY:-default_tld} #default_tld, authenticate, bypa
       - dockflare.0.zonename=${CFDOMAIN}
       - dockflare.0.path=${CFURLPATH:-}
       - dockflare.0.no_tls_verify=true
@@ -75,22 +75,7 @@ _Don't forget to ammend the default value for the port variable_
 
 As you may see, you can have multiple tunnels assigned to 1 container using the numeric value, eg `dockflare.0.x`, `dockflare.1.x` etc
 
-On stacks without networks, it is also worth mapping to the `cloudflare-net` network;
-
-<pre class="language-yaml"><code class="lang-yaml">services:
-    myapp:
-        networks:
-<strong>            - cloudflare-net
-</strong></code></pre>
-
-```yaml
-networks:
-    cloudflare-net:
-        name: cloudflare-net
-        external: true
-```
-
-And the variables to make DockFlare automate the creation of the tunnel,
+And the variables (or .env file) to make DockFlare automate the creation of the tunnel,
 
 #### Subdomain with URL path
 
@@ -133,8 +118,6 @@ HOSTNAME=
 {% endcode %}
 
 The HOSTNAME variable is the IP or local DNS address for the host, eg myserver.local or 192.168.1.10
-
-
 
 ### Health Checks
 
