@@ -14,6 +14,7 @@ _I would recommend deploying GitOps_ [_(have a look at the this_ _guide)_](../po
 
 {% code title=".ENV File" %}
 ```editorconfig
+MYSQL_PASS=
 MYSQL_PASS_ROOT=
 PORT_HTTP=
 MAIL_FROM=

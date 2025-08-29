@@ -1,39 +1,29 @@
-# 🗂️ What is this?
+---
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
 
-## Welcome, friends
+# 👋 Welcome, friends
 
-Welcome to the XFGN / AGG / LM internal documentation site.
+Step into the open doors of the AGG / XFGN / LM documentation site, your go-to destination for all things homelab and gaming! Here, we've meticulously crafted a treasure trove of knowledge to assist you in setting up services within the cozy confines of your homelab. From the intricacies of Pterodactyl and Cloudflare to the fine art of configuring hardware like UniFi gear, consider this space your tech sanctuary.
 
-If you're looking for our guides, [please click here](https://docs.agamersgrind.com), otherwise get reading!
+In our virtual library, you'll discover a plethora of resources, including example config files and expert-backed tweaks, tailor-made for gamers passionate about optimizing their game servers. We encourage you to roam freely, explore our diverse offerings, and delve into the nuances of homelab services.
 
-> ### _**Isn't this overkill?**_
+We believe in the power of community, and your voice matters here. If you stumble upon any documentation that seems amiss or outdated, fear not! Your feedback is invaluable. You can directly contribute by submitting changes on [GitBooks](https://app.gitbook.com/invite/9JJ7mwvgQ4C75V2ngGDc/Og7Lqv2QEHYFdmXTFaCD), or engage with us on [GitHub](https://github.com/trentnbauer/agg/issues/new?assignees=\&labels=documentation\&projects=\&template=gitbook\_change.yaml\&title=%5Bdoc%5D%3A+) or [Discord](https://discord.agamersgrind.com). Your insights keep our digital home lively and up-to-date.
 
-Yeah - definitely. Why am I doing it? Great question!
+So, welcome, friends, to a world where knowledge knows no bounds. Together, let's embark on a journey of tech exploration and homelab mastery. Happy browsing! 🌟
 
-I want my Homelab to be well documented for 2 reasons, the main being the [Bus Factor](https://youtube.com/clip/UgkxdUkLXC2WIXVe3e7-N4sBFwfF-XHWZeui). I also enjoy sharing this hobby with others and having things written and drawn allows me to do so while reducing the risk of an inexperienced person breaking something permanently.
-
-This documentation is intended for internal use though I have made it public as there are tid-bits of useful information for others to use in their homelabs.
-
-## _**A few to note;**_
-
-### Common acronyms and words
-
-<table><thead><tr><th width="162">Name</th><th>Meaning</th></tr></thead><tbody><tr><td>Compute</td><td>CPU or RAM requirement and/or usage</td></tr><tr><td>Homelab</td><td>A server or server-like environment physically located in a persons home, used for hobby, testing or educational purposes</td></tr><tr><td>Container</td><td>A Docker container (which has all the files and folders required to run an app and is OS agnostic)</td></tr><tr><td>Hypervisor </td><td>Virtual machine OS / software. Eg proxmox, ESXi, Hyper V etc.</td></tr></tbody></table>
-
-### GitBook management and styling
-
-* Any pages with a question mark icon are incomplete or outdated
-
-### **Credentials**
-
-* When Bitwarden is referenced, 99% of the time it is the Bitwarden organization 'XFGN/aGG'
-* All internal and external credentials are saved in the Bitwarden organization
-* My Bitwarden account is secured behind 2 FIDO keys
-  * One on my keychain
-  * The other is stored inside Macaroni
-* I have enabled 'emergency takeover' on my vault, with the below people having access
-  * No one :(
-
-
-
-\
+> _ChatGPT makes me sound a loooot better than I am_
