@@ -17,12 +17,14 @@ Refer to the [Portainer](broken-reference/) and [GitOps](broken-reference/) docu
 
 {% code title=".ENV file" %}
 ```editorconfig
-PORT_SFTP=2022    #unfortunately SFTP doesn't seem to work with CF tunnels
+PORT_SFTP=2022 # unfortunately SFTP doesn't seem to work with CF tunnels
 TZ=
 SQL_PASS=
 SQL_PASS_ROOT=
-PORT_DB=3306
-PORT=             #This is the port Cloudflare will talk too, do not use 443
+PORT_DB=3306 #Port for the database on the on the node. This is an advanced function and probably not needed
+PORT=
+CFSUBDOMAIN= # the subdomain to access your node with the . eg node1.
+CFDOMAIN= # your domain, eg example.com
 ```
 {% endcode %}
 
@@ -37,7 +39,7 @@ PORT=             #This is the port Cloudflare will talk too, do not use 443
     ```
 
     \
-    _This is to increase security on this hardware as a port forward is required_
+    &#xNAN;_&#x54;his is to increase security on this hardware as a port forward is required_
 3.  Run the command `ufw allow PORT`, replacing PORT with what you set for PORT and PORT\_SFTP above, eg;
 
     <pre class="language-sh"><code class="lang-sh"><strong>ufw allow 2022
@@ -60,7 +62,7 @@ Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostn
 2. Click on the Settings cog in the top right
 3. Click on Nodes
 4. Click on Create New in the top right and
-   * Name your Node (I normally give them the same name as the server)
+   * Name your Node (I normally give them the same name as the server, or node1)
    * Provide the FQDN of your Node (this is the externally available reverse proxy address configured here [#configure-the-reverse-proxy](creating-a-new-wings-node.md#configure-the-reverse-proxy "mention"))
    * Tick 'Use SSL Connection'
    * Tick 'Behind Proxy'
@@ -84,12 +86,12 @@ Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostn
 
 {% tabs %}
 {% tab title="Using Portainer Edge Agent" %}
-1. Log into Portainer and click on the Wings host
-2. Click on 'Stacks' and select the 'wings' stack
-3. Click on 'Stop stack'
-4. Click on 'Volumes'
-5. Locate the Wings 'config' volume - it will be named after your stack (eg wings\_config) and click on Browse
-6. Click on the Upload button, then select your config.yml file
+1) Log into Portainer and click on the Wings host
+2) Click on 'Stacks' and select the 'wings' stack
+3) Click on 'Stop stack'
+4) Click on 'Volumes'
+5) Locate the Wings 'config' volume - it will be named after your stack (eg wings\_config) and click on Browse
+6) Click on the Upload button, then select your config.yml file
 {% endtab %}
 
 {% tab title="Not using Edge Agent" %}
