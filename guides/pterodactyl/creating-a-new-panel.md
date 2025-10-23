@@ -118,6 +118,8 @@ php artisan p:user:make
 
 ## Set up your Proxy
 
+_This step can be skipped thanks to the labels in the compose file, if you are using_ [_DockFlare_](https://github.com/ChrispyBacon-dev/DockFlare)
+
 1. Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostname.md) and [Authentication ](broken-reference/)guides
    * Your subdomain and domain need to match the APP\_URL variable set on the container ( SUBDOMAIN+DOMAIN, eg panel.example.com )
    * Type is HTTP, pointing at yourserver:port
