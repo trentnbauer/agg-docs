@@ -47,6 +47,8 @@ CFDOMAIN= # your domain, eg example.com
 
 ### Configure the Reverse Proxy
 
+_This step can be skipped thanks to the labels in the compose file, if you are using_ [_DockFlare_](https://github.com/ChrispyBacon-dev/DockFlare)
+
 Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostname.md) and [Authentication ](broken-reference/)guides
 
 * Your subdomain and domain needs to match the PTERO\_PANEL\_URL variable set above
