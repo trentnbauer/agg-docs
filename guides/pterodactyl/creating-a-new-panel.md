@@ -1,6 +1,6 @@
 # Creating a new Panel
 
-<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Time Required</td><td>30 Minutes</td></tr><tr><td>Difficulty</td><td>Moderate</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Time Required</td><td>30 Minutes</td></tr><tr><td>Difficulty</td><td>Easy</td></tr></tbody></table>
 
 ## Installing the Panel
 
@@ -21,7 +21,7 @@ MAIL_FROM=
 MAIL_SERVER=smtp.gmail.com
 MAIL_PORT=587
 MAIL_USERNAME=youremail@gmail.com
-MAIL_PASS=
+MAIL_PASS= #SMTP App Password https://www.febooti.com/products/automation-workshop/tutorials/enable-google-app-passwords-for-smtp.html
 SUBDOMAIN= #the subdomain, including the . for your panel. Eg panel.
 DOMAIN= #the domain for your panel, eg example.com
 TZ= #your timezone
@@ -119,7 +119,7 @@ php artisan p:user:make
 ## Set up your Proxy
 
 1. Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostname.md) and [Authentication ](broken-reference/)guides
-   * Your subdomain and domain needs to match the PTERO\_PANEL\_URL variable set above
+   * Your subdomain and domain need to match the APP\_URL variable set on the container ( SUBDOMAIN+DOMAIN, eg panel.example.com )
    * Type is HTTP, pointing at yourserver:port
 
 <figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption><p>panel.example.com proxies to yourserver:port</p></figcaption></figure>

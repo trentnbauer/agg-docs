@@ -22,7 +22,7 @@ TZ=
 SQL_PASS=
 SQL_PASS_ROOT=
 PORT_DB=3306 #Port for the database on the on the node. This is an advanced function and probably not needed
-PORT=
+PORT=8443 #It is recommended to NOT use 443 for this
 CFSUBDOMAIN= # the subdomain to access your node with the . eg node1.
 CFDOMAIN= # your domain, eg example.com
 ```
@@ -50,9 +50,17 @@ CFDOMAIN= # your domain, eg example.com
 Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostname.md) and [Authentication ](broken-reference/)guides
 
 * Your subdomain and domain needs to match the PTERO\_PANEL\_URL variable set above
-* Type is HTTP, pointing at yourserver:port
+* Type is HTTP, pointing at yourserver:port (my example is basil.agg.local:8443)
 
 <figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+
+### Test the reverse proxy works
+
+Navigate to the URL of your reverse proxy. If you see the below text, it is working
+
+```
+{"error":"The required authorization heads were not present in the request."}
+```
 
 ## Configure Panel & Wings
 
@@ -81,7 +89,9 @@ Refer to the [Cloudflare Proxy](../cloudflare/tunnel/create-a-proxy-public-hostn
     <figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 3.  Click on your new node, then the Configuration tab and confirm that the highlighted lines are the same as mine
 
-    <figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption><p><em>I would also recommend changing the upload limit to 1024</em></p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption><p><em>I would also recommend changing the upload_limit to '1024'</em></p></figcaption></figure>
+
+    _If the highlighted settings are NOT the same, you made a mistake in step_ [#set-up-a-node-on-the-panel](creating-a-new-wings-node.md#set-up-a-node-on-the-panel "mention")_. Delete the node and start back there_
 4. Copy the contents of the file and save it as 'config.yml'
 
 {% tabs %}
