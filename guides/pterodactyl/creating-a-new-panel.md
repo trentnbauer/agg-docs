@@ -22,8 +22,9 @@ MAIL_SERVER=smtp.gmail.com
 MAIL_PORT=587
 MAIL_USERNAME=youremail@gmail.com
 MAIL_PASS=
-PTERO_PANEL_URL=https://panel.example.com #your cloudflare subdomain
-TZ=
+SUBDOMAIN= #the subdomain, including the . for your panel. Eg panel.
+DOMAIN= #the domain for your panel, eg example.com
+TZ= #your timezone
 HASHIDS_SALT= #This MUST be a 20 character string, per https://github.com/pterodactyl/panel/issues/5012#issuecomment-1960789655
 ```
 {% endcode %}
